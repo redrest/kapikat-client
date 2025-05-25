@@ -1,0 +1,65 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.search-bar input {
+  position: relative;
+  width: 100%;
+  padding: 12px 35px 12px 40px;
+  border: 1px solid #e3e2e2;
+  border-radius: 999px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-bar input:focus {
+  border-color: #FF9500;
+}
+.search-bar .search-icon {
+  position: absolute;
+  left: 18px;
+  bottom: 15px;
+  z-index: 999;
+}
+.search-bar .results {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.search-bar .results li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+.search-bar .results li:hover {
+  background-color: #f8f8f8;
+}
+.search-bar .clear-icon {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  color: rgb(176.8947368421, 174.1052631579, 174.1052631579);
+  transition: 0.2s ease;
+}
+.search-bar .clear-icon:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/*# sourceMappingURL=SearchBar.css.map */

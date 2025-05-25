@@ -1,0 +1,77 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.Modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.2s all;
+}
+.Modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.Modal .close-icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  color: #ffffff;
+  transition: 0.2s ease;
+  z-index: 1001;
+  cursor: pointer;
+}
+.Modal .close-icon:hover {
+  color: #FF9500;
+}
+.Modal__content {
+  position: relative;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #e3e2e2;
+  max-width: 90vw;
+  background-color: #ffffff;
+  transform: scale(0.5);
+  transition: 0.2s ease;
+  overflow: auto;
+  margin: 0 auto;
+}
+.Modal__content.active {
+  transform: scale(1);
+}
+
+@media (min-width: 2560px) {
+  .Modal .close-icon {
+    top: 40px;
+    right: 40px;
+    width: 45px;
+    height: 45px;
+  }
+  .Modal__content {
+    max-width: 80vw;
+  }
+}
+@media (min-width: 3840px) {
+  .Modal .close-icon {
+    top: 50px;
+    right: 50px;
+    width: 75px;
+    height: 75px;
+  }
+  .Modal__content {
+    max-width: 80vw;
+  }
+}
+
+/*# sourceMappingURL=Modal.css.map */

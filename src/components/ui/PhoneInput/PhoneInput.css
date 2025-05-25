@@ -1,0 +1,17 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.phone-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e3e2e2;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #000000;
+  word-break: break-word;
+}
+
+/*# sourceMappingURL=PhoneInput.css.map */

@@ -1,0 +1,124 @@
+@import '../../styles/utils/root';
+
+.product {
+  width: 100%;
+  height: calc(100vh);
+  padding-top: 70px;
+  &-wrapper {
+    margin: auto auto;
+    padding: 100px 0 100px;
+    max-width: 70vw;
+    width: 100%;
+  }
+  &__info {
+    position: relative;
+    width: 100%;
+    @include flex(center, stretch, row);
+    padding: 20px 0;
+  }
+
+  &__image {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    img {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid $light-gray;
+      object-fit: contain;
+    }
+
+    .product__discount {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      background-color: #ff4d4f;
+      @include font($font-size-normal, $white, $weight-bold);
+      padding: 5px 8px;
+      border-radius: 8px;
+    }
+  }
+
+  &__details {
+    position: relative;
+    flex: 1;
+    @include flex(start, start, column);
+    margin-left: 30px;
+  }
+
+  &__title {
+    max-width: 80%;
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid $light-gray;
+    &__name {
+      @include font($font-size-bg, $black, $weight-bold);
+      display: inline;
+      margin-right: 10px;
+    }
+    &__weight {
+      @include font($font-size-md, darken($light-gray, 25%), $weight-bold);
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+
+  &__info-blocks {
+    max-width: 80%;
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid $light-gray;
+
+    .product__description {
+      @include font($font-size-sm, $black, $weight-normal);
+      margin: 0 0 10px;
+      padding: 0 0 10px;
+      border-bottom: 1px solid $light-gray;
+    }
+
+    div {
+      margin-bottom: 10px;
+      h3 {
+        @include font($font-size-sm, darken($light-gray, 25%), $weight-normal);
+        margin-bottom: 2px;
+      }
+      p {
+        @include font($font-size-sm, $black, $weight-normal);
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__price {
+    position: relative;
+    max-width: 80%;
+    width: 100%;
+    @include flex(space-between, center, row);
+
+    &-wrapper {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    &-new {
+      @include font($font-size-normal, $red, $weight-bold);
+    }
+
+    &-old {
+      text-decoration: line-through;
+      color: $black-opacity;
+      font-weight: 400;
+      font-size: 0.9em;
+    }
+
+    &-regular {
+      @include font($font-size-normal, $red, $weight-bold);
+    }
+  }
+
+}

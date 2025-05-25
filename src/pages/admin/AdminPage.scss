@@ -1,0 +1,140 @@
+@import '../../styles/utils/root';
+
+.admin-page {
+  width: 100%;
+  height: calc(100vh);
+  padding-top: 70px;
+  &-wrapper {
+    position: relative;
+    max-width: 90vw;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 50px 0 0;
+  }
+  h1 {
+    @include font($font-size-bg, $black, $weight-bold);
+    margin-bottom: 20px;
+  }
+
+  .admin-tabs {
+    @include flex(center, center, row);
+    margin-bottom: 20px;
+    width: 100%;
+    button {
+      flex: 1;
+      padding: 8px 15px;
+      border: 1px solid $light-gray;
+      background: $white-g;
+      @include font($font-size-normal, $black-opacity, $weight-bold);
+      cursor: pointer;
+      transition: background 0.2s ease;
+
+      &:not(.active):hover {
+        background: $light-gray;
+      }
+      &.active {
+        background: $light-gray;
+        border: 1px solid $light-gray;
+      }
+    }
+  }
+
+  .admin-section {
+    position: relative;
+    h2 {
+      @include font($font-size-md, $black, $weight-bold);
+      margin-bottom: 10px;
+    }
+    &__controls {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+
+      input {
+        flex: 1;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 8px;
+        outline: 1px solid $light-gray;
+        @include font($font-size-sm, $black, $weight-normal);
+      }
+
+      button {
+        padding: 8px 16px;
+        background: $light-orange-2;
+        color: $white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        @include font($font-size-sm, $white, $weight-bold);
+        transition: 0.2s ease;
+
+        &:hover {
+          background: $orange;
+        }
+      }
+    }
+  }
+  .table-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .admin-table {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-height: 60vh;
+    height: 100%;
+    border-collapse: collapse;
+    background: $white;
+    border-radius: 8px;
+    overflow-x: auto;
+    overflow-y: auto;
+    table-layout: fixed;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    th, td {
+      position: relative;
+      min-width: 200px;
+      padding: 4px 8px;
+      border-bottom: 1px solid $light-gray;
+      @include font($font-size-sm, $black-opacity, $weight-normal);
+      text-align: left;
+    }
+
+    th {
+      background: $white-g;
+      @include font($font-size-sm, $black, $weight-bold);
+    }
+
+    tr {
+      position: relative;
+      width: 100%;
+      &:hover {
+        background: $white-g;
+      }
+    }
+
+    img.admin-table__img {
+      max-width: 100px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    td:last-child {
+      text-align: center;
+      button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        @include font($font-size-normal, $black-opacity, $weight-bold);
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}

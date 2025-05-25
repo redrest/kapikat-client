@@ -1,0 +1,210 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.cart-panel__button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.6);
+  word-break: break-word;
+  margin-right: 10px;
+  padding: 0 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cart-panel__button svg {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.cart-panel__button .cart-panel__badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #E01D12;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+}
+.cart-panel__icon {
+  width: 24px;
+  height: 24px;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.6);
+  word-break: break-word;
+}
+.cart-panel__icon:hover {
+  color: #000000;
+}
+.cart-panel__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+  cursor: pointer;
+}
+.cart-panel__overlay.visible {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+.cart-panel__panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.cart-panel__panel.open {
+  right: 0;
+}
+.cart-panel__content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cart-panel__close {
+  position: absolute;
+  top: 26px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 7;
+}
+.cart-panel__body {
+  max-height: 100vh;
+  height: 100%;
+  padding: 20px;
+  background: #f4f4f4;
+  border: 1px solid #e3e2e2;
+  border-radius: 15px;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .cart-panel__button {
+    padding: 0 4px;
+  }
+  .cart-panel__button svg {
+    width: 22px;
+    height: 22px;
+  }
+  .cart-panel__button .cart-panel__badge {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
+  .cart-panel__icon {
+    width: 22px;
+    height: 22px;
+    font-size: 0.875rem;
+  }
+  .cart-panel__close {
+    top: 16px;
+    right: 10px;
+    font-size: 1rem;
+  }
+  .cart-panel__panel {
+    width: 300px;
+    right: -350px;
+  }
+}
+@media (max-width: 575px) {
+  .cart-panel__button {
+    padding: 0 3px;
+  }
+  .cart-panel__button svg {
+    width: 20px;
+    height: 20px;
+  }
+  .cart-panel__button .cart-panel__badge {
+    font-size: 0.65rem;
+    padding: 1.5px 4px;
+  }
+  .cart-panel__icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.875rem;
+  }
+  .cart-panel__panel {
+    width: 100vw;
+    right: -100vw;
+  }
+  .cart-panel__panel.open {
+    right: 0;
+  }
+  .cart-panel__close {
+    top: 26px;
+    right: 10px;
+    font-size: 1rem;
+  }
+  .cart-panel__body {
+    padding: 16px;
+  }
+}
+@media (min-width: 2560px) {
+  .cart-panel__button svg {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .cart-panel__button .cart-panel__badge {
+    font-size: 1.5rem !important;
+    padding: 2px 8px !important;
+  }
+  .cart-panel__icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 2rem !important;
+  }
+  .cart-panel__panel {
+    right: -550px;
+    width: 500px !important;
+  }
+  .cart-panel__close {
+    font-size: 2rem !important;
+  }
+}
+@media (min-width: 3840px) {
+  .cart-panel__button svg {
+    width: 56px !important;
+    height: 56px !important;
+  }
+  .cart-panel__button .cart-panel__badge {
+    font-size: 1.75rem !important;
+    padding: 2px 8px !important;
+  }
+  .cart-panel__icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 2rem !important;
+  }
+  .cart-panel__panel {
+    right: -750px;
+    width: 700px !important;
+  }
+  .cart-panel__close {
+    font-size: 2rem !important;
+  }
+}
+
+/*# sourceMappingURL=CartPanel.css.map */

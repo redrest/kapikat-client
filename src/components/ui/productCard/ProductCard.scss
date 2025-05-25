@@ -1,0 +1,214 @@
+@import '../../../styles/utils/root';
+
+.product-card {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  height: 100%;
+  background-color: $white-g;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+  cursor: pointer;
+  @include flex(center, center, column);
+  flex: 1 1 calc(21% - 20px);
+  max-width: calc(21% - 20px);
+  min-width: 220px;
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &__container {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    @include flex(space-between, center, column);
+    text-align: center;
+    text-decoration: none;
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #ff4d4f;
+    @include font($font-size-xs, $white, $weight-bold);
+    padding: 2px 6px;
+    border-radius: 4px;
+
+  }
+
+  &__name {
+    @include font($font-size-xs, $black, $weight-normal);
+    margin-bottom: 6px;
+    text-align: left;
+    display: inline;
+    white-space: break-spaces;
+    .product-card__weight {
+      @include font($font-size-xs, $black-opacity, $weight-normal);
+      margin-left: 8px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+
+  &__price {
+    margin-bottom: 8px;
+    transform: translateX(10%);
+  }
+
+  &__price-regular {
+    @include font($font-size-sm, $red, $weight-bold);
+  }
+
+  &__price-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  &__price-new {
+    @include font($font-size-sm, $red, $weight-bold);
+  }
+
+  &__price-old {
+    text-decoration: line-through;
+    color: $black-opacity;
+    font-weight: 400;
+    font-size: 0.9em;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+  .product-card {
+    max-width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+
+    &__image {
+      margin-bottom: 8px;
+      height: 160px !important;
+    }
+
+    &__name {
+      font-size: 0.75rem !important;
+
+      .product-card__weight {
+        font-size: 0.75rem !important;
+      }
+    }
+
+    &__price-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    &__price-new, &__price-regular {
+      font-size: 14px;
+    }
+
+    &__price-old {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .product-card {
+    max-width: 48%;
+    min-height: 320px;
+
+    &__image {
+      height: 200px ;
+    }
+
+    &__name {
+      font-size: $font-size-xs;
+    }
+
+    &__price-new, &__price-regular {
+      font-size: $font-size-xs;
+    }
+
+    &__price-old {
+      font-size: 13px;
+    }
+  }
+}
+
+@media (min-width: 2560px) {
+  .product-card {
+    max-width: 470px;
+    min-height: 400px;
+    padding: 24px;
+
+    &__image {
+      height: 260px;
+    }
+
+    &__name {
+      font-size: $font-size-nl-md;
+
+      .product-card__weight {
+        font-size: $font-size-nl-md;
+      }
+    }
+
+    &__price-new, &__price-regular {
+      font-size: $font-size-md;
+    }
+
+    &__price-old {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+@media (min-width: 3840px) {
+  .product-card {
+    max-width: 600px;
+    min-height: 500px;
+    padding: 30px;
+
+    &__image {
+      height: 300px;
+    }
+
+    &__name {
+      font-size: $font-size-bg-lg;
+
+      .product-card__weight {
+        font-size: $font-size-bg;
+      }
+    }
+
+    &__price-new, &__price-regular {
+      font-size: $font-size-bg-lg;
+    }
+
+    &__price-old {
+      font-size: $font-size-md;
+    }
+  }
+}

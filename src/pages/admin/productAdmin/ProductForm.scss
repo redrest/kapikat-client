@@ -1,0 +1,76 @@
+@import '../../../styles/utils/root';
+
+.product-form {
+  max-width: 600px;
+  padding: 20px;
+  background: $white-g;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  &__title {
+    @include font($font-size-normal, $black, $weight-bold);
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  &__input,
+  &__select,
+  &__textarea,
+  &__file {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+    @include font($font-size-sm, $black, $weight-normal);
+  }
+
+  &__textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+
+  &__row {
+    @include flex(start, center, row);
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  &__label {
+    @include font($font-size-sm, $black-opacity, $weight-bold);
+    margin-left: 5px;
+  }
+
+  &__input--small,
+  &__select--small {
+    flex: 1;
+    max-width: 100px;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    @include font($font-size-sm, $white, $weight-bold);
+    transition: 0.2s ease;
+
+    &--submit {
+      background: $light-orange-2;
+      &:hover { background: $orange; }
+    }
+    &--cancel {
+      background: $light-gray;
+      color: $black;
+      &:hover { background: darken($light-gray, 5%); }
+    }
+  }
+}

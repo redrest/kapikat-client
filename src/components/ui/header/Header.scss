@@ -1,0 +1,291 @@
+@import '../../../styles/utils/root';
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  height: 70px;
+  z-index: 1000;
+  transition: 0.3s ease-out;
+  background: $white-g;
+  border: 1px solid $light-gray;
+  .container {
+    position: relative;
+    @include flex(space-between, center, row);
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 90vw;
+    height: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    a {
+      text-decoration: none;
+      @include font($font-size-bg, $orange, $weight-bold);
+    }
+  }
+
+  &__search-bar {
+    position: relative;
+    max-width: 40%;
+    width: 100%;
+  }
+
+  &__profile {
+    position: relative;
+    @include flex(center, center, row);
+
+    &__menu {
+      position: relative;
+      width: 100%;
+      @include flex(space-between, center, row);
+      flex-wrap: nowrap;
+      user-select: none;
+      &__user, > a {
+        position: relative;
+        @include flex(center, center, row);
+        flex-wrap: nowrap;
+        gap: 5px;
+        padding: 12px 20px;
+        border: 1px solid $light-gray;
+        border-radius: 100px;
+        background-color: $white;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        text-decoration: none;
+        @include font($font-size-sm, $black, $weight-normal);
+        &:hover {
+          background-color: $light-gray;
+        }
+
+        .header-icon {
+          width: 20px;
+          height: 20px;
+        }
+        .profile-dropdown {
+          position: absolute;
+          @include flex(center, center, column);
+          top: 100%;
+          right: 0;
+          min-width: 160px;
+          width: 100%;
+          padding: 10px 0;
+          background-color: $white;
+          border: 1px solid $light-gray;
+          border-radius: 15px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          pointer-events: none;
+          transition:
+                  opacity 0.3s ease,
+                  transform 0.3s ease,
+                  visibility 0.3s;
+
+          &.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+
+          a,
+          button {
+            @include flex(start, center, row);
+            width: 100%;
+            padding: 10px 20px;
+            gap:5px;
+            text-decoration: none;
+            text-align: left;
+            border: none;
+            background-color: $white;
+            color: $black;
+            font-size: $font-size-sm;
+            transition: background-color 0.2s;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $light-gray;
+            }
+          }
+        }
+      }
+
+
+    }
+    .header__admin-btn {
+      position: relative;
+      @include flex(center, center, null);
+      flex: 1;
+      width: fit-content;
+      height: fit-content;
+      color: $black;
+      border: 1px solid $light-gray;
+      border-radius: 100px;
+      background-color: $white;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      &:hover {
+        color: $orange;
+      }
+      .header-icon {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: 60px;
+
+    .container {
+      padding: 0 15px;
+      max-width: 95vw;
+    }
+
+    &__search-bar {
+      max-width: 50%;
+    }
+
+    &__profile {
+      &__menu {
+        &__user,
+        > a {
+          padding: 10px 16px;
+          font-size: $font-size-xs;
+        }
+
+        .profile-dropdown {
+          min-width: 180px;
+        }
+      }
+
+      .header__admin-btn {
+        margin-left: 6px;
+
+        .header-icon {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+
+    &__logo {
+      a {
+        font-size: $font-size-normal;
+      }
+    }
+  }
+
+  .header__profile__menu__user > span, .header__profile__menu > a > span {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .header {
+    height: 55px;
+
+    .container {
+      padding: 0 10px;
+    }
+
+    &__search-bar {
+      max-width: 60%;
+    }
+
+    .header__logo {
+      display: none;
+    }
+
+    &__profile {
+      flex-direction: column;
+      gap: 8px;
+
+      &__menu {
+        &__user,
+        > a {
+          padding: 8px 14px;
+          font-size: $font-size-xs;
+        }
+
+        .profile-dropdown {
+          top: calc(100% + 5px);
+        }
+      }
+
+      .header__admin-btn {
+        .header-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    .header__profile__menu__user  span {
+      font-size: $font-size-xs;
+    }
+  }
+}
+
+@media (min-width: 2560px) {
+  .header {
+    height: 90px;
+    .header__logo a {
+      font-size: $font-size-bg;
+    }
+
+    .header__search-bar {
+      max-width: 50%;
+    }
+
+    .header__profile__menu__user,
+    .header__profile__menu > a {
+      padding: 16px 28px;
+      font-size: $font-size-normal;
+    }
+    .header__profile__menu__user  span {
+      font-size: $font-size-normal;
+    }
+    .header-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+@media (min-width: 3840px) {
+  .header {
+    height: 130px;
+    .header__logo a {
+      font-size: $font-size-xxl;
+    }
+
+    .header__search-bar {
+      max-width: 55%;
+    }
+
+    .header__profile__menu__user,
+    .header__profile__menu > a {
+      padding: 20px 32px;
+      font-size: $font-size-bg;
+    }
+    .header__profile__menu__user  span {
+      font-size: $font-size-bg;
+    }
+    .header-icon {
+      width: 42px;
+      height: 42px;
+    }
+  }
+}
+
+
+
+

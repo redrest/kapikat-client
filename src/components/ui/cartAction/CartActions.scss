@@ -1,0 +1,217 @@
+@import '../../../styles/utils/root';
+
+.cart-actions {
+  @include flex(center, center, null);
+  > button {
+    position: relative;
+    @include flex(center, center, null);
+    background-color: $orange;
+    @include font($font-size-xs, $white, $weight-bold);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 25px;
+    transition: 0.2s ease;
+
+    &:hover {
+      background: darken($orange, 5%);
+    }
+  }
+
+  &--product-page {
+    .cart-actions__counter {
+      @include flex(center, center, row);
+      button {
+        position: relative;
+        @include flex(center, center, null);
+        width: 36px;
+        height: 36px;
+        background-color: $orange;
+        @include font($font-size-xs, $white, $weight-normal);
+        border: none;
+        cursor: pointer;
+        padding: 1px 4px;
+        transition: 0.2s ease;
+
+        &:hover {
+          background: darken($orange, 5%);
+        }
+
+        &:first-of-type {
+          border-radius: 8px 0 0 8px;
+        }
+
+        &:last-of-type {
+          border-radius: 0 8px 8px 0;
+        }
+
+        .counter-icon {
+          width: 60%;
+          height: 60%;
+          object-fit: contain;
+        }
+      }
+
+      span {
+        padding: 8px 12px;
+        width: 42px;
+        height: 36px;
+        background-color: $orange;
+        text-align: center;
+        @include font($font-size-sm, $white, $weight-bold);
+
+      }
+    }
+  }
+
+  &--product-card {
+    .cart-actions__counter {
+      @include flex(center, center, row);
+      button {
+        position: relative;
+        @include flex(center, center, null);
+        width: 36px;
+        height: 36px;
+        background-color: $orange;
+        @include font($font-size-xs, $white, $weight-normal);
+        border: none;
+        cursor: pointer;
+        padding: 1px 4px;
+        transition: 0.2s ease;
+
+        &:hover {
+          background: darken($orange, 5%);
+        }
+
+        &:first-of-type {
+          border-radius: 8px 0 0 8px;
+        }
+
+        &:last-of-type {
+          border-radius: 0 8px 8px 0;
+        }
+
+        .counter-icon {
+          width: 60%;
+          height: 60%;
+          object-fit: contain;
+        }
+      }
+
+      span {
+        padding: 9px 12px !important;
+        width: 42px;
+        height: 36px;
+        background-color: $orange;
+        text-align: center;
+        @include font($font-size-sm, $white, $weight-bold);
+      }
+    }
+  }
+
+  &--cart {
+    .cart-actions__counter {
+      @include flex(start, center, row);
+
+      button {
+        position: relative;
+        @include flex(center, center, null);
+        width: 24px;
+        height: 24px;
+        background-color: $orange;
+        @include font($font-size-xs, $white, $weight-normal);
+        border: none;
+        cursor: pointer;
+        padding: 1px 4px;
+        transition: 0.2s ease;
+
+        &:hover {
+          background: darken($orange, 5%);
+        }
+
+        &:first-of-type {
+          border-radius: 8px 0 0 8px;
+        }
+
+        &:last-of-type {
+          border-radius: 0 8px 8px 0;
+        }
+
+        .counter-icon {
+          width: 60%;
+          height: 60%;
+          object-fit: contain;
+        }
+      }
+
+      span {
+        padding: 4px 4px !important;
+        width: 28px;
+        height: 24px;
+        background-color: $orange;
+        text-align: center;
+        @include font($font-size-sm, $white, $weight-bold);
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    gap: 10px;
+    > button {
+      padding: 8px 20px;
+    }
+    .cart-actions__counter {
+      flex-direction: row;
+      button {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      span {
+        width: 32px !important;
+        height: 28px !important;
+        font-size: $font-size-xs;
+        padding: 6px 6px !important;
+      }
+    }
+  }
+
+  @media (min-width: 2560px) {
+    > button {
+      padding: 8px 18px;
+      font-size: $font-size-normal;
+    }
+    .cart-actions__counter {
+      button {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: $font-size-md;
+      }
+      span {
+        width: 60px !important;
+        height: 38px !important;
+        font-size: $font-size-nl-md;
+        padding: 6px 14px !important;
+      }
+    }
+  }
+
+  @media (min-width: 3840px) {
+    > button {
+      padding: 16px 28px;
+    }
+    .cart-actions__counter {
+      button {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px;
+      }
+      span {
+        width: 70px !important;
+        height: 50px !important;
+        font-size: $font-size-bg;
+        padding: 8px 16px !important;
+      }
+    }
+  }
+}
+

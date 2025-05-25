@@ -1,0 +1,44 @@
+$font-size-xxl: 4rem;    // 72px
+$font-size-xl: 3.5rem;       // 64px
+$font-size-lg: 3rem;     // 56px
+$font-size-bg-lg: 2.5rem;    // 48px
+$font-size-bg: 2rem;       // 32px
+$font-size-md: 1.75rem;    // 28px
+$font-size-nl-md: 1.5rem;  // 24px
+$font-size-normal: 1.25rem; // 20px
+$font-size-sm: 1rem;       // 16px
+$font-size-xs: 0.875rem;   // 14px
+$weight-normal: 400;
+$weight-bold: 600;
+$weight-extra-bold: 800;
+$white: #ffffff;
+$orange: #FF9500;
+$red: #E01D12;
+$black: #000000;
+$black-opacity: rgba(0, 0, 0, 0.6);
+$white-g: #f4f4f4;
+$light-gray: #e3e2e2;
+$light-orange: #FAB48F;
+$light-orange-2: #f8a839;
+
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+}
+
+@mixin font($font-size, $color, $weight) {
+  font-family: 'Inter', sans-serif;
+  font-weight: $weight;
+  font-size: $font-size;
+  color: $color;
+  word-break: break-word;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+

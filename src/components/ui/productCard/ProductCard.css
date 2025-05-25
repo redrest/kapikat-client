@@ -1,0 +1,210 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.product-card {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  height: 100%;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1 1 calc(21% - 20px);
+  max-width: calc(21% - 20px);
+  min-width: 220px;
+}
+.product-card:hover {
+  transform: translateY(-2px);
+}
+.product-card__container {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  text-decoration: none;
+}
+.product-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.product-card__discount {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #ff4d4f;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #ffffff;
+  word-break: break-word;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.product-card__name {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #000000;
+  word-break: break-word;
+  margin-bottom: 6px;
+  text-align: left;
+  display: inline;
+  white-space: break-spaces;
+}
+.product-card__name .product-card__weight {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+  word-break: break-word;
+  margin-left: 8px;
+  display: inline-block;
+  white-space: nowrap;
+}
+.product-card__price {
+  margin-bottom: 8px;
+  transform: translateX(10%);
+}
+.product-card__price-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #E01D12;
+  word-break: break-word;
+}
+.product-card__price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.product-card__price-new {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #E01D12;
+  word-break: break-word;
+}
+.product-card__price-old {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+@media (max-width: 576px) {
+  .product-card {
+    max-width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  .product-card__image {
+    margin-bottom: 8px;
+    height: 160px !important;
+  }
+  .product-card__name {
+    font-size: 0.75rem !important;
+  }
+  .product-card__name .product-card__weight {
+    font-size: 0.75rem !important;
+  }
+  .product-card__price-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .product-card__price-new, .product-card__price-regular {
+    font-size: 14px;
+  }
+  .product-card__price-old {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1024px) {
+  .product-card {
+    max-width: 48%;
+    min-height: 320px;
+  }
+  .product-card__image {
+    height: 200px;
+  }
+  .product-card__name {
+    font-size: 0.875rem;
+  }
+  .product-card__price-new, .product-card__price-regular {
+    font-size: 0.875rem;
+  }
+  .product-card__price-old {
+    font-size: 13px;
+  }
+}
+@media (min-width: 2560px) {
+  .product-card {
+    max-width: 470px;
+    min-height: 400px;
+    padding: 24px;
+  }
+  .product-card__image {
+    height: 260px;
+  }
+  .product-card__name {
+    font-size: 1.5rem;
+  }
+  .product-card__name .product-card__weight {
+    font-size: 1.5rem;
+  }
+  .product-card__price-new, .product-card__price-regular {
+    font-size: 1.75rem;
+  }
+  .product-card__price-old {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 3840px) {
+  .product-card {
+    max-width: 600px;
+    min-height: 500px;
+    padding: 30px;
+  }
+  .product-card__image {
+    height: 300px;
+  }
+  .product-card__name {
+    font-size: 2.5rem;
+  }
+  .product-card__name .product-card__weight {
+    font-size: 2rem;
+  }
+  .product-card__price-new, .product-card__price-regular {
+    font-size: 2.5rem;
+  }
+  .product-card__price-old {
+    font-size: 1.75rem;
+  }
+}
+
+/*# sourceMappingURL=ProductCard.css.map */

@@ -1,0 +1,32 @@
+@import '../../../styles/utils/root';
+
+.breadcrumbs {
+  position: relative;
+  width: 100%;
+  margin: 8px 0 12px;
+  font-size: 14px;
+  @include flex(start, center, row);
+  a {
+    @include font($font-size-sm, $black-opacity, $weight-bold);
+    text-decoration: none;
+    transition: 0.2s;
+
+    &:hover {
+      text-decoration: underline;
+      color: $black;
+    }
+  }
+
+  span {
+    @include flex(center, center, row);
+    @include font($font-size-sm, $black-opacity, $weight-bold);
+    &:not(:last-child)::after {
+      content: "|";
+      margin: 0 8px;
+    }
+
+    &:last-child {
+      cursor: default;
+    }
+  }
+}

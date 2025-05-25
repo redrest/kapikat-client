@@ -1,0 +1,49 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.breadcrumbs {
+  position: relative;
+  width: 100%;
+  margin: 8px 0 12px;
+  font-size: 14px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.breadcrumbs a {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+  word-break: break-word;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+.breadcrumbs span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+  word-break: break-word;
+}
+.breadcrumbs span:not(:last-child)::after {
+  content: "|";
+  margin: 0 8px;
+}
+.breadcrumbs span:last-child {
+  cursor: default;
+}
+
+/*# sourceMappingURL=BreadCrumbs.css.map */

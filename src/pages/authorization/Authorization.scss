@@ -1,0 +1,122 @@
+@import '../../styles/utils/root';
+
+
+.auth-container {
+  width: 100%;
+  height: calc(100vh);
+  padding-top: 70px;
+  @include flex(center, center, null);
+}
+
+.auth-form {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: $white-g;
+  border-radius: 15px;
+  border: 1px solid $light-gray;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+  .wrapper {
+    position: relative;
+    @include flex(center, stretch, column);
+    gap: 20px;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: $font-size-md;
+      color: $black;
+    }
+
+    .auth-form__field {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 8px;
+        font-weight: $weight-bold;
+        color: gray;
+      }
+
+      .input-with-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        input {
+          position: relative;
+          width: 100%;
+          padding-right: 40px;
+        }
+
+        .toggle-password-icon {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          right: 0;
+          top: -50%;
+          transform: translateY(11px);
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: $font-size-normal;
+          color: gray;
+          padding: 10px;
+        }
+      }
+
+      input {
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        @include font($font-size-sm, $black, $weight-normal);
+        transition: 0.2s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $orange;
+        }
+      }
+
+      p {
+        margin-top: 4px;
+        font-size: $font-size-xs;
+        color: red;
+      }
+    }
+
+    button {
+      padding: 12px;
+      margin-top: 10px;
+      background-color: $orange;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      @include font($font-size-sm, $white-g, $weight-bold);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: $light-orange-2;
+      }
+    }
+
+    > p {
+      text-align: center;
+      font-size: $font-size-sm;
+      color: $black;
+      a {
+        text-decoration: none;
+        color: green;
+        transition: 0.2s ease;
+        opacity: 0.8;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

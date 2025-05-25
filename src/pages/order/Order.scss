@@ -1,0 +1,191 @@
+@import '../../styles/utils/root';
+
+.order-page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  padding-top: 70px;
+  &-wrapper {
+    position: relative;
+    max-width: 50vw;
+    width: 100%;
+    padding: 50px 20px 20px;
+    margin: 0 auto;
+    @include flex(center, start, column);
+    gap: 10px;
+  }
+
+  &__title {
+    @include font($font-size-bg, $black, $weight-bold);
+    align-self: flex-start;
+
+  }
+
+  &__form {
+    width: 100%;
+    background: $white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    @include flex(start, start, column);
+    gap: 15px;
+    h3 {
+      margin-top: 10px;
+      @include font($font-size-normal, $black, $weight-bold);
+      align-self: center;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__field {
+    width: 100%;
+    @include flex(center, center, row);
+    gap: 10px;
+
+    label {
+      min-width: 180px;
+      @include font($font-size-sm, $black-opacity, $weight-bold);
+      text-align: left;
+    }
+    input,
+    select {
+      width: 100%;
+      max-width: 300px;
+      padding: 8px 12px;
+      border: 1px solid $light-gray;
+      border-radius: 4px;
+      @include font($font-size-sm, $black, $weight-normal);
+      outline: none;
+    }
+  }
+
+  &__address {
+    width: 100%;
+    @include flex(center, start, column);
+    gap: 20px;
+
+    .order-page__field {
+      flex: 1;
+      flex-direction: row;
+
+      label {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  &__cart {
+    width: 100%;
+    background: $white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    @include flex(start, start, column);
+    gap: 15px;
+
+    h3 {
+      @include font($font-size-normal, $black, $weight-bold);
+      margin: 0 0 10px;
+      align-self: center;
+    }
+  }
+
+  &__cart-item {
+    width: 100%;
+    @include flex(start, center, row);
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid $white-g;
+
+    &__image {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+      }
+    }
+
+    &__name {
+      flex: 1;
+      @include font($font-size-sm, $black, $weight-normal);
+      padding-top: 10px;
+      text-align: left;
+      display: inline;
+    }
+
+    &__weight {
+      @include font($font-size-sm, $black-opacity, $weight-bold);
+      display: inline;
+      margin-left: 5px;
+      white-space: nowrap;
+    }
+
+    &__price {
+      @include flex(end, center, row);
+      gap: 12px;
+
+      &--final {
+        @include font($font-size-sm, $red, $weight-bold);
+      }
+      &--old {
+        @include font($font-size-xs, $black-opacity, $weight-bold);
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  &__total {
+    width: 100%;
+    @include flex(end, center, row);
+    @include font($font-size-normal, $black, $weight-bold);
+    margin-top: 10px;
+  }
+
+  &__submit {
+    position: relative;
+    min-width: 220px;
+    height: 50px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: $light-orange-2;
+    @include font($font-size-normal, $white, $weight-bold);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    align-self: flex-end;
+
+    &:hover:not(:disabled) {
+      background: $orange;
+    }
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+  .modal-content-wrapper {
+    h3 {
+      @include font($font-size-normal, $black, $weight-bold);
+      margin-bottom: 15px;
+    }
+    p {
+      @include font($font-size-sm, $black-opacity, $weight-normal);
+      text-align: center;
+    }
+    a {
+      margin-top: 5px;
+      @include font($font-size-sm, $light-orange-2, $weight-normal);
+      cursor: pointer;
+      text-decoration: underline;
+      align-self: center;
+      transition: 0.2s ease;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}

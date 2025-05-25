@@ -1,0 +1,88 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+.code-confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+.code-confirmation .container {
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  padding: 20px 20px 0;
+  border-radius: 12px;
+  text-align: center;
+}
+.code-confirmation .container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+.code-confirmation .container .code-confirmation__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.code-confirmation .container .code-confirmation__form input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+.code-confirmation .container .code-confirmation__form input:focus {
+  outline: none;
+  border-color: #f8a839;
+}
+.code-confirmation .container .code-confirmation__form button[type=submit] {
+  padding: 10px;
+  background-color: #f8a839;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.code-confirmation .container .code-confirmation__form button[type=submit]:hover {
+  background-color: #FF9500;
+}
+.code-confirmation .container p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.code-confirmation .container .code-confirmation__resend {
+  margin-top: 20px;
+}
+.code-confirmation .container .code-confirmation__resend button {
+  background: none;
+  border: none;
+  color: #FF9500;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.code-confirmation .container .code-confirmation__resend button:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.registration-code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 30vw;
+  width: 100%;
+  height: calc(100vh - 70px);
+  margin: 0 auto;
+}
+.registration-code__wrapper {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/*# sourceMappingURL=CodeConfirmation.css.map */

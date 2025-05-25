@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import './styles/app.scss';
+import {BrowserRouter} from 'react-router-dom';
+import {useLocation} from "react-use";
+import AppRouter from "./components/AppRouter";
+import Header from "./components/ui/header/Header";
+import {UserProvider} from "./context/AuthContext";
+import {GuestCartProvider} from "./context/GuestCartContext";
+import {CartProvider} from "./context/CartContext";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
+    return (
+        <GuestCartProvider>
+            <UserProvider>
+                <CartProvider>
+                    <BrowserRouter>
+                        <Header/>
+                        <AppRouter/>
+                    </BrowserRouter>
+                </CartProvider>
+            </UserProvider>
+        </GuestCartProvider>
+    );
 }
 
 export default App;

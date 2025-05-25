@@ -1,0 +1,235 @@
+@import '../../../styles/utils/root';
+
+.cart-panel {
+  &__button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include font($font-size-nl-md, $black-opacity, null);
+    margin-right: 10px;
+    padding: 0 5px;
+    text-align: center;
+    @include flex( center, center, null);
+    svg {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .cart-panel__badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: $red;
+      color: $white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 0.75rem;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    @include font($font-size-nl-md, $black-opacity, null);
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+    cursor: pointer;
+
+    &.visible {
+      background-color: rgba(0, 0, 0, 0.4);
+      opacity: 1;
+    }
+  }
+
+  &__panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background: $white;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    @include flex(start, null, column);
+
+    &.open {
+      right: 0;
+    }
+  }
+  &__content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__close {
+    position: absolute;
+    top: 26px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 7;
+  }
+
+  &__body {
+    max-height: 100vh;
+    height: 100%;
+    padding: 20px;
+    background: $white-g;
+    border: 1px solid $light-gray;
+    border-radius: 15px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cart-panel {
+    &__button {
+      padding: 0 4px;
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+      .cart-panel__badge{
+        font-size: 0.7rem;
+        padding: 2px 5px;
+      }
+    }
+
+    &__icon {
+      width: 22px;
+      height: 22px;
+      font-size: $font-size-xs;
+    }
+    &__close {
+      top: 16px;
+      right: 10px;
+      font-size: $font-size-sm;
+    }
+
+    &__panel {
+      width: 300px;
+      right: -350px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .cart-panel {
+    &__button {
+      padding: 0 3px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .cart-panel__badge {
+        font-size: 0.65rem;
+        padding: 1.5px 4px;
+      }
+    }
+
+    &__icon {
+      width: 20px;
+      height: 20px;
+      font-size: $font-size-xs;
+    }
+
+    &__panel {
+      width: 100vw;
+      right: -100vw;
+      &.open {
+        right: 0;
+      }
+    }
+
+    &__close {
+      top: 26px;
+      right: 10px;
+      font-size: $font-size-sm;
+    }
+
+    &__body {
+      padding: 16px;
+    }
+  }
+}
+
+@media (min-width: 2560px) {
+  .cart-panel {
+    &__button {
+      svg {
+        width: 42px !important;
+        height: 42px !important;
+      }
+
+      .cart-panel__badge {
+        font-size: $font-size-nl-md !important;
+        padding: 2px 8px !important;
+      }
+    }
+
+    &__icon {
+      width: 36px !important;
+      height: 36px !important;
+      font-size: $font-size-bg !important;
+    }
+
+    &__panel {
+      right: -550px;
+      width: 500px !important;
+    }
+
+    &__close {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+@media (min-width: 3840px) {
+  .cart-panel {
+    &__button {
+      svg {
+        width: 56px !important;
+        height: 56px !important;
+      }
+
+      .cart-panel__badge {
+        font-size: $font-size-md !important;
+        padding: 2px 8px !important;
+      }
+    }
+
+    &__icon {
+      width: 36px !important;
+      height: 36px !important;
+      font-size: $font-size-bg !important;
+    }
+
+    &__panel {
+      right: -750px;
+      width: 700px !important;
+    }
+
+    &__close {
+      font-size: 2rem !important;
+    }
+  }
+}

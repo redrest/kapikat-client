@@ -1,0 +1,93 @@
+@import '../../../styles/utils/root';
+
+.code-confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+
+  .container {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 20px 20px 0;
+    border-radius: 12px;
+
+    text-align: center;
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .code-confirmation__form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        transition: border-color 0.2s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $light-orange-2
+        }
+      }
+
+      button[type="submit"] {
+        padding: 10px;
+        background-color: $light-orange-2;
+        color: #fff;
+        border: none;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: $orange;
+        }
+      }
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .code-confirmation__resend {
+      margin-top: 20px;
+
+      button {
+        background: none;
+        border: none;
+        color: $orange;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: underline;
+
+        &:disabled {
+          color: #aaa;
+          cursor: not-allowed;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.registration-code {
+  @include flex(center, center, null);
+  max-width: 30vw;
+  width: 100%;
+  height: calc(100vh - 70px);
+  margin: 0 auto;
+
+  &__wrapper {
+    box-shadow: 0 4px 8px rgb(0,0,0,0.1);
+    padding: 20px;
+  }
+}
