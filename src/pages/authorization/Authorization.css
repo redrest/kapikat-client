@@ -31,6 +31,7 @@ html, body {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
+  flex-wrap: nowrap;
 }
 .auth-form .wrapper h2 {
   text-align: center;
@@ -123,6 +124,90 @@ html, body {
 }
 .auth-form .wrapper > p a:hover {
   opacity: 1;
+}
+@media (max-width: 1024px) {
+  .auth-form {
+    margin: 80px auto;
+    padding: 20px;
+  }
+  .auth-form .wrapper {
+    gap: 16px;
+  }
+  .auth-form .wrapper h2 {
+    font-size: 1.25rem;
+  }
+  .auth-form .wrapper .auth-form__field input {
+    font-size: 0.875rem;
+  }
+  .auth-form .wrapper button {
+    font-size: 0.875rem;
+  }
+  .auth-form .wrapper > p {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 575px) {
+  .auth-form {
+    max-width: 80%;
+    margin: 60px auto;
+    padding: 15px;
+  }
+  .auth-form .wrapper {
+    gap: 12px;
+  }
+  .auth-form .wrapper h2 {
+    font-size: 1rem;
+  }
+  .auth-form .wrapper .auth-form__field input {
+    padding: 8px 10px;
+    font-size: 0.875rem;
+  }
+  .auth-form .wrapper button {
+    padding: 10px;
+    font-size: 0.875rem;
+  }
+  .auth-form .wrapper > p {
+    font-size: 0.875rem;
+  }
+  .auth-form .wrapper .toggle-password-icon {
+    margin-top: 5px;
+  }
+}
+@media (min-width: 2560px) {
+  .auth-form {
+    max-width: 600px;
+    padding: 40px;
+  }
+  .auth-form .wrapper h2 {
+    font-size: 2rem;
+  }
+  .auth-form .wrapper .auth-form__field input {
+    font-size: 1.75rem;
+  }
+  .auth-form .wrapper button {
+    font-size: 1.75rem;
+  }
+  .auth-form .wrapper > p {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 3840px) {
+  .auth-form {
+    max-width: 800px;
+    padding: 50px;
+  }
+  .auth-form .wrapper h2 {
+    font-size: 2.5rem;
+  }
+  .auth-form .wrapper .auth-form__field input {
+    font-size: 2rem;
+  }
+  .auth-form .wrapper button {
+    font-size: 2rem;
+  }
+  .auth-form .wrapper > p {
+    font-size: 2rem;
+  }
 }
 
 /*# sourceMappingURL=Authorization.css.map */

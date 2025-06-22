@@ -228,8 +228,8 @@ html, body {
   border-top: 1px solid #e3e2e2;
 }
 .profile-section .order-list__item .order-list-item .order-list__image {
-  width: 64px;
-  height: 64px;
+  max-width: 64px;
+  max-height: 64px;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -406,6 +406,328 @@ html, body {
 }
 .modal-content-wrapper .message--success {
   color: green;
+}
+
+@media (max-width: 1024px) {
+  .profile-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 70vw;
+    padding: 30px 10px 0;
+  }
+  .profile-page__sidebar {
+    width: 100%;
+    max-width: none;
+    border-right: none;
+    border-bottom: 1px solid #e3e2e2;
+    padding: 10px 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .profile-page__sidebar button {
+    flex: 1 0 auto;
+    margin: 0 8px;
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+  .profile-page__content {
+    padding: 15px;
+    width: 100%;
+  }
+  .profile-section {
+    margin-bottom: 20px;
+  }
+  .profile-section__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #000000;
+    word-break: break-word;
+  }
+  .profile-section .profile-section__field label,
+  .profile-section .profile-section__field input {
+    font-size: 0.875rem;
+  }
+  .profile-section__actions .profile-section__button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  .profile-section .address-list .address-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profile-section .address-list .address-item p {
+    font-size: 0.875rem !important;
+  }
+  .profile-section .order-list__header span,
+  .profile-section .order-list__name,
+  .profile-section .order-list__price--final,
+  .profile-section .order-list__price,
+  .profile-section .order-list__footer strong {
+    font-size: 0.875rem !important;
+  }
+  .profile-section .order-list__image {
+    width: 48px;
+    height: 48px;
+  }
+  .profile-section .order-list__footer .profile-section__button {
+    width: 100% !important;
+    max-width: 150px !important;
+    padding: 0.5rem !important;
+    font-size: 0.875rem !important;
+  }
+  .modal-content-wrapper {
+    max-width: 90vw;
+    min-width: auto;
+    padding: 15px;
+  }
+  .password-actions__field input {
+    padding: 6px;
+    font-size: 0.875rem;
+  }
+  .password-actions__button {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+  .message {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 575px) {
+  .profile-page-wrapper {
+    max-width: 90vw;
+    padding: 20px 5px 0;
+  }
+  .profile-page__sidebar {
+    gap: 4px;
+  }
+  .profile-page__sidebar button {
+    padding: 6px 10px;
+    font-size: 0.875rem;
+  }
+  .profile-page__content {
+    padding: 10px;
+  }
+  .profile-section {
+    margin-bottom: 15px;
+  }
+  .profile-section__title {
+    font-size: 0.875rem;
+  }
+  .profile-section .profile-section__field label,
+  .profile-section .profile-section__field input {
+    font-size: 0.875rem;
+  }
+  .profile-section__actions .profile-section__button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+  .profile-section .address-list .address-item {
+    padding: 10px;
+  }
+  .profile-section .order-list__image {
+    max-width: 40px !important;
+    max-height: 40px !important;
+  }
+  .profile-section .order-list__header span,
+  .profile-section .order-list__name,
+  .profile-section .order-list__price--final,
+  .profile-section .order-list__price,
+  .profile-section .order-list__footer strong {
+    font-size: 0.875rem;
+  }
+  .profile-section .order-list__price {
+    flex-direction: column !important;
+  }
+  .profile-section .order-list-item {
+    padding: 5px !important;
+  }
+  .profile-section .order-list__footer {
+    justify-content: center !important;
+  }
+  .profile-section .order-list__footer .profile-section__button {
+    margin-top: 10px;
+    width: 100% !important;
+    max-width: 90% !important;
+    padding: 0.5rem !important;
+    font-size: 0.875rem !important;
+  }
+  .modal-content-wrapper {
+    padding: 10px;
+    max-width: 95vw;
+  }
+  .password-actions__field input {
+    padding: 5px;
+    font-size: 0.875rem;
+  }
+  .password-actions__button {
+    padding: 0.4rem;
+    font-size: 0.875rem;
+  }
+  .message {
+    font-size: 0.875rem;
+  }
+}
+@media (min-width: 2560px) {
+  .profile-page-wrapper {
+    max-width: 40vw;
+    padding: 60px 0 0;
+  }
+  .profile-page__sidebar {
+    max-width: 300px;
+    padding: 25px;
+  }
+  .profile-page__sidebar button {
+    padding: 10px 20px;
+    font-size: 1.75rem;
+  }
+  .profile-page__content {
+    padding: 25px;
+  }
+  .profile-section {
+    margin-bottom: 35px;
+  }
+  .profile-section__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: #000000;
+    word-break: break-word;
+  }
+  .profile-section .profile-section__field label,
+  .profile-section .profile-section__field input {
+    font-size: 1.25rem;
+  }
+  .profile-section__actions .profile-section__button {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.25rem;
+  }
+  .profile-section .address-list .address-item {
+    padding: 14px 18px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #000000;
+    word-break: break-word;
+  }
+  .profile-section .order-list__image {
+    width: 80px;
+    height: 80px;
+  }
+  .profile-section .order-list__header span,
+  .profile-section .order-list__name,
+  .profile-section .order-list__price--final,
+  .profile-section .order-list__footer strong {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.6);
+    word-break: break-word;
+  }
+  .profile-section .order-list__footer .profile-section__button {
+    width: 180px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.25rem;
+  }
+  .modal-content-wrapper {
+    max-width: 450px;
+    padding: 25px;
+  }
+  .password-actions__field input {
+    padding: 10px;
+    font-size: 1.25rem;
+  }
+  .password-actions__button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.25rem;
+  }
+  .message {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 3840px) {
+  .profile-page-wrapper {
+    max-width: 35vw;
+    padding: 70px 0 0;
+  }
+  .profile-page__sidebar {
+    max-width: 350px;
+    padding: 30px;
+  }
+  .profile-page__sidebar button {
+    padding: 12px 24px;
+    font-size: 3rem;
+  }
+  .profile-page__content {
+    padding: 30px;
+  }
+  .profile-section {
+    margin-bottom: 40px;
+  }
+  .profile-section__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 3.5rem;
+    color: #000000;
+    word-break: break-word;
+  }
+  .profile-section .profile-section__field label,
+  .profile-section .profile-section__field input {
+    font-size: 3rem;
+  }
+  .profile-section__actions .profile-section__button {
+    padding: 1rem 2rem;
+    font-size: 3rem;
+  }
+  .profile-section .address-list .address-item {
+    padding: 16px 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: #000000;
+    word-break: break-word;
+  }
+  .profile-section .order-list__image {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-section .order-list__header span,
+  .profile-section .order-list__name,
+  .profile-section .order-list__price--final,
+  .profile-section .order-list__footer strong {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.6);
+    word-break: break-word;
+  }
+  .profile-section .order-list__footer .profile-section__button {
+    width: 200px;
+    padding: 0.8rem 1.6rem;
+    font-size: 3rem;
+  }
+  .modal-content-wrapper {
+    max-width: 500px;
+    padding: 30px;
+  }
+  .password-actions__field input {
+    padding: 12px;
+    font-size: 3rem;
+  }
+  .password-actions__button {
+    padding: 1rem 1.6rem;
+    font-size: 3rem;
+  }
+  .message {
+    font-size: 3rem;
+  }
 }
 
 /*# sourceMappingURL=Profile.css.map */

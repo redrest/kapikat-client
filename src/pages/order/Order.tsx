@@ -111,8 +111,6 @@ const Order: FC = () => {
         }
     };
 
-
-
     return (
         <div className="order-page">
             <div className="order-page-wrapper">

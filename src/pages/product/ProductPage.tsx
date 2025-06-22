@@ -4,7 +4,6 @@ import './ProductPage.scss';
 import Loader from "../../components/Loader";
 import api from "../../api/axios";
 import {IProduct} from "../../types/types";
-import {useUser} from "../../context/AuthContext";
 import CartActions from "../../components/ui/cartAction/CartActions";
 import Breadcrumbs from "../../components/ui/breadCrumbs/BreadCrumbs";
 import {useCartContext} from "../../context/CartContext";

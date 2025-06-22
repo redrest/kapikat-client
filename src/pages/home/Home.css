@@ -148,6 +148,7 @@ html, body {
   color: #000000;
   word-break: break-word;
   margin-bottom: 10px;
+  text-align: center;
 }
 .main .modal-content-wrapper p {
   font-family: "Inter", sans-serif;

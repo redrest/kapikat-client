@@ -197,8 +197,8 @@
         }
 
         .order-list__image {
-          width: 64px;
-          height: 64px;
+          max-width: 64px;
+          max-height: 64px;
           border-radius: 4px;
           overflow: hidden;
 
@@ -344,10 +344,299 @@
       color: green;
     }
   }
-
-
 }
 
+@media (max-width: 1024px) {
+  .profile-page-wrapper {
+    @include flex(center, start, column);
+    max-width: 70vw;
+    padding: 30px 10px 0;
+  }
+  .profile-page__sidebar {
+    width: 100%;
+    max-width: none;
+    border-right: none;
+    border-bottom: 1px solid $light-gray;
+    padding: 10px 0;
+    @include flex(start, center, row);
+
+    gap: 8px;
+
+    button {
+      flex: 1 0 auto;
+      margin: 0 8px;
+      padding: 8px 12px;
+      font-size: $font-size-sm;
+    }
+  }
+  .profile-page__content {
+    padding: 15px;
+    width: 100%;
+  }
+  .profile-section {
+    margin-bottom: 20px;
+    &__title {
+      @include font($font-size-sm, $black, $weight-bold);
+    }
+    .profile-section__field label,
+    .profile-section__field input {
+      font-size: $font-size-xs;
+    }
+    &__actions .profile-section__button {
+      padding: 0.5rem 1rem;
+      font-size: $font-size-xs;
+    }
+    .address-list .address-item {
+      flex-direction: column;
+      align-items: flex-start;
+      p {
+        font-size: $font-size-xs !important;
+      }
+    }
+    .order-list__header span,
+    .order-list__name,
+    .order-list__price--final,
+    .order-list__price,
+    .order-list__footer strong {
+      font-size: $font-size-xs !important;
+    }
+    .order-list__image {
+      width: 48px;
+      height: 48px;
+    }
+    .order-list__footer .profile-section__button {
+      width: 100% !important;
+      max-width: 150px !important;
+      padding: 0.5rem !important;
+      font-size: $font-size-xs !important;
+    }
+  }
+  .modal-content-wrapper {
+    max-width: 90vw;
+    min-width: auto;
+    padding: 15px;
+  }
+  .password-actions__field input {
+    padding: 6px;
+    font-size: $font-size-xs;
+  }
+  .password-actions__button {
+    padding: 0.5rem;
+    font-size: $font-size-xs;
+  }
+  .message {
+    font-size: $font-size-xs;
+  }
+}
+
+@media (max-width: 575px) {
+  .profile-page-wrapper {
+    max-width: 90vw;
+    padding: 20px 5px 0;
+  }
+  .profile-page__sidebar {
+    gap: 4px;
+    button {
+      padding: 6px 10px;
+      font-size: $font-size-xs;
+    }
+  }
+  .profile-page__content {
+    padding: 10px;
+  }
+  .profile-section {
+    margin-bottom: 15px;
+    &__title {
+      font-size: $font-size-xs;
+    }
+    .profile-section__field label,
+    .profile-section__field input {
+      font-size: $font-size-xs;
+    }
+    &__actions .profile-section__button {
+      padding: 0.4rem 0.8rem;
+      font-size: $font-size-xs;
+    }
+    .address-list .address-item {
+      padding: 10px;
+    }
+    .order-list__image {
+      max-width: 40px !important;
+      max-height: 40px !important;
+    }
+    .order-list__header span,
+    .order-list__name,
+    .order-list__price--final,
+    .order-list__price,
+    .order-list__footer strong {
+      font-size: $font-size-xs;
+    }
+    .order-list__price {
+      flex-direction: column !important;
+    }
+    .order-list-item {
+      padding: 5px !important;
+    }
+    .order-list__footer {
+      justify-content: center !important;
+    }
+    .order-list__footer .profile-section__button {
+      margin-top: 10px;
+      width: 100% !important;
+      max-width: 90% !important;
+      padding: 0.5rem !important;
+      font-size: $font-size-xs !important;
+    }
+  }
+  .modal-content-wrapper {
+    padding: 10px;
+    max-width: 95vw;
+  }
+  .password-actions__field input {
+    padding: 5px;
+    font-size: $font-size-xs;
+  }
+  .password-actions__button {
+    padding: 0.4rem;
+    font-size: $font-size-xs;
+  }
+  .message {
+    font-size: $font-size-xs;
+  }
+}
+
+@media (min-width: 2560px) {
+  .profile-page-wrapper {
+    max-width: 40vw;
+    padding: 60px 0 0;
+  }
+  .profile-page__sidebar {
+    max-width: 300px;
+    padding: 25px;
+    button {
+      padding: 10px 20px;
+      font-size: $font-size-md;
+    }
+  }
+  .profile-page__content {
+    padding: 25px;
+  }
+  .profile-section {
+    margin-bottom: 35px;
+    &__title {
+      @include font($font-size-lg, $black, $weight-bold);
+    }
+    .profile-section__field label,
+    .profile-section__field input {
+      font-size: $font-size-normal;
+    }
+    &__actions .profile-section__button {
+      padding: 0.8rem 1.6rem;
+      font-size: $font-size-normal;
+    }
+    .address-list .address-item {
+      padding: 14px 18px;
+      @include font($font-size-normal, $black, $weight-normal);
+    }
+    .order-list__image {
+      width: 80px;
+      height: 80px;
+    }
+    .order-list__header span,
+    .order-list__name,
+    .order-list__price--final,
+    .order-list__footer strong {
+      @include font($font-size-normal, $black-opacity, $weight-normal);
+    }
+    .order-list__footer .profile-section__button {
+      width: 180px;
+      padding: 0.6rem 1.2rem;
+      font-size: $font-size-normal;
+    }
+  }
+  .modal-content-wrapper {
+    max-width: 450px;
+    padding: 25px;
+  }
+  .password-actions__field input {
+    padding: 10px;
+    font-size: $font-size-normal;
+  }
+  .password-actions__button {
+    padding: 0.8rem 1.2rem;
+    font-size: $font-size-normal;
+  }
+  .message {
+    font-size: $font-size-normal;
+  }
+}
+
+// Ультраширокие экраны (4K+)
+@media (min-width: 3840px) {
+  .profile-page-wrapper {
+    max-width: 35vw;
+    padding: 70px 0 0;
+  }
+  .profile-page__sidebar {
+    max-width: 350px;
+    padding: 30px;
+    button {
+      padding: 12px 24px;
+      font-size: $font-size-lg;
+    }
+  }
+  .profile-page__content {
+    padding: 30px;
+  }
+  .profile-section {
+    margin-bottom: 40px;
+    &__title {
+      @include font($font-size-xl, $black, $weight-bold);
+    }
+    .profile-section__field label,
+    .profile-section__field input {
+      font-size: $font-size-lg;
+    }
+    &__actions .profile-section__button {
+      padding: 1rem 2rem;
+      font-size: $font-size-lg;
+    }
+    .address-list .address-item {
+      padding: 16px 20px;
+      @include font($font-size-lg, $black, $weight-normal);
+    }
+    .order-list__image {
+      width: 100px;
+      height: 100px;
+    }
+    .order-list__header span,
+    .order-list__name,
+    .order-list__price--final,
+    .order-list__footer strong {
+      @include font($font-size-lg, $black-opacity, $weight-normal);
+    }
+    .order-list__footer .profile-section__button {
+      width: 200px;
+      padding: 0.8rem 1.6rem;
+      font-size: $font-size-lg;
+    }
+  }
+  .modal-content-wrapper {
+    max-width: 500px;
+    padding: 30px;
+  }
+  .password-actions__field input {
+    padding: 12px;
+    font-size: $font-size-lg;
+  }
+  .password-actions__button {
+    padding: 1rem 1.6rem;
+    font-size: $font-size-lg;
+  }
+  .message {
+    font-size: $font-size-lg;
+  }
+}
 
 
 

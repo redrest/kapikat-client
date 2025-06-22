@@ -14,6 +14,7 @@
     position: relative;
     width: 100%;
     @include flex(center, stretch, row);
+    flex-wrap: nowrap;
     padding: 20px 0;
   }
 
@@ -40,6 +41,7 @@
   }
 
   &__details {
+    min-width: 400px;
     position: relative;
     flex: 1;
     @include flex(start, start, column);
@@ -121,4 +123,90 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    &-wrapper {
+      max-width: 70vw;
+      padding: 60px 0;
+    }
+    &__image {
+      max-width: 300px;
+      .product__discount {
+        padding: 5px 8px;
+      }
+    }
+
+    &__details {
+      min-width: 250px;
+      margin-left: 10px;
+    }
+
+    &__title,
+    &__info-blocks,
+    &__price {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 575px) {
+    &-wrapper {
+      max-width: 90vw;
+      padding: 20px 10px;
+    }
+
+    &__info {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+    }
+
+    &__image {
+      max-width: 300px;
+    }
+
+    &__details {
+      min-width: 100px;
+      margin-left: 0;
+      margin-top: 20px;
+    }
+
+    &__title__name {
+      font-size: 1.2rem;
+    }
+
+    &__title__weight {
+      font-size: 1rem;
+    }
+
+
+  }
+
+  @media (min-width: 2560px) {
+    &-wrapper {
+      max-width: 50vw;
+    }
+
+    &__title__name {
+      font-size: 2rem;
+    }
+
+    &__title__weight {
+      font-size: 1.5rem;
+    }
+
+    &__price-new,
+    &__price-regular {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media (min-width: 3840px) {
+    &-wrapper {
+      max-width: 40vw;
+    }
+
+    &__price-new,
+    &__price-regular {
+      font-size: 2rem;
+    }
+  }
 }

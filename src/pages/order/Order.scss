@@ -6,7 +6,7 @@
   padding-top: 70px;
   &-wrapper {
     position: relative;
-    max-width: 50vw;
+    max-width: 60vw;
     width: 100%;
     padding: 50px 20px 20px;
     margin: 0 auto;
@@ -94,6 +94,7 @@
   &__cart-item {
     width: 100%;
     @include flex(start, center, row);
+    flex-wrap: nowrap;
     gap: 15px;
     padding: 10px 0;
     border-bottom: 1px solid $white-g;
@@ -187,5 +188,188 @@
         color: $orange;
       }
     }
+  }
+
+  @media (max-width: 1024px) {
+    &-wrapper {
+      max-width: 70vw;
+    }
+
+    &__title {
+      @include font($font-size-bg, $black, $weight-bold);
+    }
+
+    &__form {
+      gap: 10px;
+      h3 {
+        @include font($font-size-normal, $black, $weight-bold);
+      }
+    }
+
+    &__field {
+      flex-direction: column;
+      gap: 0;
+      label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        @include font($font-size-sm, $black-opacity, $weight-bold);
+      }
+      input,
+      select {
+        max-width: 80%;
+        @include font($font-size-sm, $black, $weight-normal);
+      }
+      select option {
+        position: relative;
+        max-width: 200px;
+        width: 100%;
+      }
+    }
+
+    &__address {
+      gap: 10px;
+      margin-top: 20px;
+      .order-page__field {
+        flex-direction: column;
+        gap: 0;
+        label {
+        }
+      }
+    }
+
+    &__cart-item {
+      &__image {
+        width: 60px;
+        height: 60px;
+      }
+
+      &__name {
+        @include font($font-size-sm, $black, $weight-normal);
+      }
+
+      &__weight {
+        @include font($font-size-sm, $black-opacity, $weight-bold);
+
+      }
+
+      &__price {
+        &--final {
+          @include font($font-size-sm, $red, $weight-bold);
+        }
+        &--old {
+          @include font($font-size-xs, $black-opacity, $weight-bold);
+        }
+      }
+    }
+
+    &__total {
+      @include font($font-size-normal, $black, $weight-bold);
+    }
+
+    &__submit {
+      min-width: 180px;
+      height: 40px;
+      padding: 8px 20px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    &-wrapper {
+      max-width: 90vw;
+    }
+
+    &__title {
+      @include font($font-size-md, $black, $weight-bold);
+    }
+
+    &__form {
+      gap: 10px;
+      padding: 10px;
+      h3 {
+        @include font($font-size-normal, $black, $weight-bold);
+      }
+    }
+
+    &__field {
+      flex-direction: column;
+      gap: 0;
+      label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        @include font($font-size-sm, $black-opacity, $weight-bold);
+      }
+      input,
+      select {
+        max-width: 100%;
+        @include font($font-size-sm, $black, $weight-normal);
+      }
+      select option {
+        position: relative;
+        max-width: 200px;
+        width: 100%;
+      }
+    }
+
+    &__address {
+      gap: 10px;
+      margin-top: 20px;
+      .order-page__field {
+        flex-direction: column;
+        gap: 0;
+        label {
+        }
+      }
+    }
+    &__cart {
+      padding: 10px;
+    }
+    &__cart-item {
+      gap: 5px;
+      &__image {
+        max-width: 48px;
+        max-height: 48px;
+      }
+
+      &__name {
+        @include font($font-size-xs, $black, $weight-normal);
+      }
+
+      &__weight {
+        @include font($font-size-xs, $black-opacity, $weight-bold);
+
+      }
+
+      &__price {
+        flex-direction: column;
+        font-size: $font-size-xs;
+        &--final {
+          @include font($font-size-xs, $red, $weight-bold);
+        }
+        &--old {
+          @include font($font-size-xs, $black-opacity, $weight-bold);
+        }
+      }
+    }
+
+    &__total {
+      @include font($font-size-sm, $black, $weight-bold);
+    }
+
+    &__submit {
+      min-width: 180px;
+      height: 40px;
+      padding: 8px 20px;
+      font-size: $font-size-sm;
+    }
+  }
+
+  @media (min-width: 2560px) {
+
+  }
+
+  @media (min-width: 3840px) {
+
   }
 }

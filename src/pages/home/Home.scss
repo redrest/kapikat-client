@@ -124,6 +124,7 @@
       margin-top: 0;
       @include font($font-size-nl-md, $black, $weight-bold);
       margin-bottom: 10px;
+      text-align: center;
     }
 
     p {
@@ -142,7 +143,6 @@
       font-weight: bold;
       @include font($font-size-sm, $white, $weight-bold);
       transition: background-color 0.3s ease;
-
       &:hover {
         background-color: $orange;
       }

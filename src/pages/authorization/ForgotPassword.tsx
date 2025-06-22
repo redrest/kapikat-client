@@ -51,7 +51,7 @@ const ForgotPassword = () => {
         }
         setIsLoading(true);
         try {
-            await api.post('/auth/reset-password', {
+            await api.post('/auth/set-new-password', {
                 email,
                 code,
                 newPassword
@@ -122,7 +122,6 @@ const ForgotPassword = () => {
                                     required
                                 />
                                 <button type="submit">Сменить пароль</button>
-                                {message && <p>{message}</p>}
                             </form>
                         )}
 

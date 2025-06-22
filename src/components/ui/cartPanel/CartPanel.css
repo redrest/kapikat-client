@@ -101,6 +101,53 @@ html, body {
   border-radius: 15px;
   overflow-y: auto;
 }
+.cart-panel .modal-content-wrapper {
+  padding: 30px 40px;
+  border-radius: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.cart-panel .modal-content-wrapper h2 {
+  margin-top: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #000000;
+  word-break: break-word;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.cart-panel .modal-content-wrapper p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.6);
+  word-break: break-word;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.cart-panel .modal-content-wrapper .modal-auth-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f8a839;
+  color: #ffffff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  word-break: break-word;
+  transition: background-color 0.3s ease;
+}
+.cart-panel .modal-content-wrapper .modal-auth-link:hover {
+  background-color: #FF9500;
+}
 
 @media (max-width: 1024px) {
   .cart-panel__button {
@@ -160,6 +207,23 @@ html, body {
   }
   .cart-panel__body {
     padding: 16px;
+  }
+  .cart-panel .modal-content-wrapper {
+    padding: 20px;
+  }
+  .cart-panel .modal-content-wrapper h2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #000000;
+    word-break: break-word;
+  }
+  .cart-panel .modal-content-wrapper p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    word-break: break-word;
   }
 }
 @media (min-width: 2560px) {
